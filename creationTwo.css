@@ -1,0 +1,149 @@
+#Items, #Spells,#Pet{
+    position: absolute;
+    top:100px;
+    left:20px;
+    border: 2px;
+    width: 250px;
+    height: 400px;
+    background: gray;
+}
+
+#Items{
+    left:410px;
+}
+
+#Pet{
+    left:720px;
+}
+
+.previous {
+    position: absolute;
+    top: 570px;
+    left:1000px;
+    background-color: #2d3031;
+    color: white;
+  }
+  
+  .next {
+    position: absolute;
+    top: 570px;
+    left: 1150px;
+    background-color: #2d3031;
+    color: white;
+  }
+
+  ul {
+    border: 1px solid #aaaaaa;
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+    padding-left: 1px;
+  }
+  
+  /* Style the list items*/
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 5px 4px 5px 8px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 16px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable INTERESANTE*/ 
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9a1;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  /* Cambio el fondo y la letra al seleccionar en la lista */
+  ul li.checked {
+    background: rgb(136, 136, 236);
+    border-color: #020203;
+  }
+  
+  /* Agregar una marca de "checked" cuando se hace click */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #271780;
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 0px 7px;
+    top: 6px;
+    left: 158px;
+    height: 15px;
+  }
+
+  
+/* Style the tab */
+.tab {
+    position: absolute;
+    top: 100px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    float: bottom;
+    /*width: 410px;*/
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 11px 3px;
+    transition: 0.3s;
+    font-size: 13px;
+    border: violet;
+    border-style: outset;
+  }
+
+  #magicButton{
+    border: rgb(72, 40, 255);
+
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+
+  
+  #backgroundCharacter{
+	background: gray;
+    color:white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 23px;
+}
+  /*
+#other,#itemC {
+    visibility: hidden;
+    display: none;
+}*/

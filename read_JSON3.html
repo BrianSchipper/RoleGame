@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+
+#div1, #div2, #div3 {
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+  /*
+  if (  document.getElementById('div1').children[0] == null )
+  {
+	document.getElementById('div1')["ondrop"] = "";
+  }
+  else{
+	document.getElementById('div1')["ondrop"] = "drop(event)";
+  }
+  
+  if ( document.getElementById('div2').children[0] == "undefined" )
+  {
+	document.getElementById('div2')["ondrop"] = "";
+  }
+  else{
+	document.getElementById('div2')["ondrop"] = "drop(event)";
+  }
+  
+  
+  if ( document.getElementById('div3').children[0] == "undefined" )
+  {
+	document.getElementById('div3')["ondrop"] = "";
+  }
+  else{
+	document.getElementById('div3')["ondrop"] = "drop(event)";
+  }
+  */
+}
+</script>
+</head>
+<body>
+
+
+<p>Cargar los puntos en cada habilidad</p>
+
+<img id="drag1" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\ocho.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<img id="drag2" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\diez.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<img id="drag3" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\doce.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<img id="drag4" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\dieciseis.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<img id="drag5" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\catorce.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<img id="drag6" src="C:\Users\bschipper.BAUNET\Desktop\Nico\assets\dieciocho.jpg" draggable="true" ondragstart="drag(event)" width="30" height="30">
+<br>
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+<div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+</body>
+</html>

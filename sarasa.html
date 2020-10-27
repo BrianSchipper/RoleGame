@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+
+</head>
+<style>
+
+/* Add some margin to the page and set a default font and colour */
+
+/* Content de caracteristicas */
+
+#content {
+  position: absolute;
+  left: 20px;
+  margin: 130px 10px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Slots for final card positions */
+
+#characteristicsSlots {
+  margin: 50px auto 0 auto;
+  background: #ddf;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+#cardPile {
+  width: 340px;
+  height: 55px;
+  padding: 20px;
+  border: 2px solid #333;
+  background: rgb(80, 80, 74);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#characteristicsSlots {
+  width: 55px;
+  height: 340px;
+  padding-left: 110px;
+  padding-right: 50px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+/* Individual cards and slots */
+
+#characteristicsSlots div.hovered {
+  background: rgb(196, 61, 61);
+}
+
+#characteristicsSlots div {
+  width: 20px;
+  height: 27px;
+  padding: 10px;
+  margin: 0 0 10px 0px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  border-style: dashed;
+}
+
+#cardPile div {
+  float: left;
+  margin: 0 0 0 10px;
+  width: 20px;
+  height: 27px;
+  padding: 10px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  background: #666;
+  color: #fff;
+  font-size: 25px;
+  text-shadow: 0 0 3px #000;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+</style>
+<body>
+<h1 id="datos">pestaña de sarasa</h1>
+<div id="content">
+  <div id="cardPile"></div>
+  <div id="characteristicsSlots"></div>
+</div>
+<script>
+ var correctCards = 0;
+$( init );
+
+function init() {
+
+  // Reset the game
+  correctCards = 0;// servira para validacion
+  $('#cardPile').html( '' );
+  $('#characteristicsSlots').html( '' );
+
+  // Create the pile of shuffled cards
+  var numbers = [ 8, 10, 12, 14, 16, 18 ];
+  numbers.sort( function() { return Math.random() - .5 } );
+
+  for ( var i=0; i<numbers.length; i++ ) {
+    $('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr( 'id', 'card'+numbers[i] ).appendTo( '#cardPile' ).draggable( {
+      containment: '#content',
+      stack: '#cardPile div',
+      cursor: 'move',
+      revert: true
+    } );
+  }
+
+  var words = [ 'Fue', 'Agi', 'Con', 'Int', 'Car', 'Sab' ];
+  for ( var i=1; i<= words.length; i++ ) {
+    $('<div>' + words[i-1] + '</div>').data( 'number', i ).appendTo( '#characteristicsSlots' ).droppable( {
+      accept: '#cardPile div',
+      hoverClass: 'hovered',
+      drop: handleCardDrop
+    } );
+  }
+
+}
+
+function handleCardDrop(event, ui) {
+  
+  //slotNumber numero del slot, cardNumber numero en la tarjeta
+  var slotCharacteristic = $(this).data('number');
+  var cardNumber = ui.draggable.data('number');
+
+  ui.draggable.addClass('str'); // le da un color
+  //ui.draggable.draggable('disable'); // que no puedas mover la carta
+  //$(this).droppable('disable'); // hace que no puedas dejar ninguna carta en ese slot
+  ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' }); // pega la carta en el espacio
+  ui.draggable.draggable('option', 'revert', false); // evita que vuelva la carta si esta en posicion 
+  correctCards++; //incrementa la cantidad de cartas correctas
+}
+   
+</script>
+</body>
+</html>

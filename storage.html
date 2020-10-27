@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+script>
+</head>
+<body>
+
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+
+<ul id="myUL">
+    <li>Athletics</li>
+    <li>Acrobatics</li>
+    <li>Sleight of Hand</li>
+    <li>Stealth</li>
+    <li>Arcana</li>
+    <li>History</li>
+    <li>Investigation</li>
+    <li>Nature</li>
+    <li>Religion</li>
+    <li>Animal Handling</li>
+    <li>Insight</li>
+    <li>Medicine</li>
+    <li>Perception</li>
+    <li>Survival</li>
+    <li>Deception</li>
+    <li>Intimidation</li>
+    <li>Performance</li>
+    <li>Persuacion</li>
+</ul>
+
+
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+  } else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+  }
+}
+
+var ul = document.getElementById("myUL"); // asumiendo que existe
+var docfrag = document.createDocumentFragment();
+var browserList = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"];
+
+browserList.forEach(function(e) {
+  var li = document.createElement("li");
+  li.textContent = e;
+  docfrag.appendChild(li);
+});
+
+ul.appendChild(docfrag);
+// una lista con los navegadores mas conocidos
+</script>
+</body>
+</html>

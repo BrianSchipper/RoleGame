@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="creation.css" />
+  <script type="text/javascript" src="jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+<h1>Creacion de personaje</h1>
+
+<p id="characterName"><input id="name" placeholder="Nombra tu personaje..."></p>
+
+<!--Selector de razas-->
+<div class="race-select" style="width:250px; margin:20px" >
+    <select>
+      <option value="0">Seleccionar Raza</option>
+      <option value="1">Orco</option>
+      <option value="2">Humano</option>
+      <option value="3">Elfo</option>
+      <option value="4">Enano</option>
+      
+    </select>
+  </div>
+
+<!--Selector de clases-->
+<div class="class-select" style="width:250px; margin:20px">
+    <select>
+      <option value="0">Seleccionar Clase</option>
+      <option value="1">Druida</option>
+      <option value="2">Guerrero</option>
+      <option value="3">Mago</option>
+      <option value="4">Monje</option>
+      
+    </select>
+</div>
+
+<!--Container de caracteristicas dragNdrop-->
+<div id="content">
+  <div id="cardPile"></div>
+  <div id="characteristicsSlots"></div>
+</div> 
+
+<div id="Characteristics">
+  <p>Fuerza</p>
+  <p>Agilidad</p>
+  <p>Constitucion</p>
+  <p>Inteligencia</p>
+  <p>Sabiduria</p>
+  <p>Carisma</p>
+</div>
+
+<div id="CharacteristicsPlus">
+  <p id="strPlus">0</p>
+  <p id="agiPlus">0</p>
+  <p id="conPlus">0</p>
+  <p id="intPlus">0</p>
+  <p id="knoPlus">0</p>
+  <p id="chaPlus">0</p>
+</div>
+
+<!--Container de caracteristicas
+<div class="container">
+<form>
+
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Fuerza</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(str)" value="Decrease Value">-</div>
+        <input id="str" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(str)" value="Increase Value">+</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Agilidad</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(dex)" value="Decrease Value">-</div>
+        <input id="dex" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(dex)" value="Increase Value">+</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Constitucion</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(con)" value="Decrease Value">-</div>
+        <input id="con" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(con)" value="Increase Value">+</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Inteligencia</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(int)" value="Decrease Value">-</div>
+        <input id="int" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(int)" value="Increase Value">+</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Sabiduria</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(kno)" value="Decrease Value">-</div>
+        <input id="kno" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(kno)" value="Increase Value">+</div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-25">
+        <label for="fname">Carisma</label>
+        </div>
+        <div class="col-75">
+        <div class="value-button" id="decrease" onclick="decreaseValue(cha)" value="Decrease Value">-</div>
+        <input id="cha" type="number" value="0" />
+        <div class="value-button" id="increase" onclick="increaseValue(cha)" value="Increase Value">+</div>
+        </div>
+    </div>
+
+</form>
+</div>
+-->
+
+<!--Lista de habilidades-->
+<ul id="myUL">
+    <li>Athletics</li>
+    <li>Acrobatics</li>
+    <li>Sleight of Hand</li>
+    <li>Stealth</li>
+    <li>Arcana</li>
+    <li>History</li>
+    <li>Investigation</li>
+    <li>Nature</li>
+    <li>Religion</li>
+    <li>Animal Handling</li>
+    <li>Insight</li>
+    <li>Medicine</li>
+    <li>Perception</li>
+    <li>Survival</li>
+    <li>Deception</li>
+    <li>Intimidation</li>
+    <li>Performance</li>
+    <li>Persuacion</li>
+</ul>
+  
+<div id="imageCharacter">Imagen del personaje</div>
+<div id="pasivesGainedRace">Pasivas ganadas por raza</div>
+<div id="pasivesGainedClass">Pasivas ganadas por clase</div>
+
+<a id="Previous" href="home.html" class="previous">&laquo; Atras</a>
+<a id="Next"  href="creationTwo.html" class="next">Continuar &raquo;</a>
+
+<!--onclick="loadCharacter()" <button onclick="clickCounter()" type="button">Click me!</button>-->
+
+<script>var total = 0;</script>
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="personajes.js"></script>
+<script type="text/javascript" src="creation.js"></script>
+
+
+</body>
+</html>

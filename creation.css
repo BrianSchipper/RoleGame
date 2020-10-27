@@ -1,0 +1,407 @@
+/*Caracteristicas del selector de raza*/
+.race-select {
+    position: absolute;
+    font-family: Arial;
+    top: 120px;
+    left: 10px;
+}
+
+.race-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.class-select {
+    position: absolute;
+    font-family: Arial;
+    top: 180px;
+    left: 10px;
+}
+
+.class-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: #4d4f50;
+}
+
+/*estilo de la flechita dentro del select*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: #4d4f50;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#Characteristics,#CharacteristicsPlus{
+  position: absolute;
+  left:115px;
+  top: 355px;
+}
+
+#Characteristics p, #CharacteristicsPlus p
+{
+  margin: 0 0 27px 0px;
+}
+
+#CharacteristicsPlus{
+  left:285px;
+}
+
+#content {
+  position: absolute;
+  left: 20px;
+  margin: 115px 10px 10px 10px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Espacios para la posicion final de las cartas */
+#characteristicsSlots {
+  margin: 50px auto 0 auto;
+  background: #ddf;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+#cardPile {
+  width: 330px;
+  height: 40px;
+  padding: 15px;
+  border: 2px solid #333;
+  background: rgb(80, 80, 74);
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+#characteristicsSlots {
+  width: 55px;
+  height: 265px;
+  padding-left: 110px;
+  padding-right: 50px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .3em rgba(0, 0, 0, .8);
+}
+
+/* Individual cards and slots */
+#characteristicsSlots div.hovered {
+  background: rgb(196, 61, 61);
+}
+
+#characteristicsSlots div {
+  width: 20px;
+  height: 20px;
+  padding: 10px;
+  margin: 0 0 10px 0px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  border-style: dashed;
+}
+
+#cardPile div {
+  float: left;
+  margin: 0 0 0 10px;
+  width: 20px;
+  height: 12px;
+  padding: 10px;
+  /*padding-bottom: 0;*/
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #fff;
+  background: #666;
+  color: #fff;
+  font-size: 15px;
+  text-shadow: 0 0 3px #000;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+  box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+}
+
+
+/* posicion y ancho de las habilidades */
+#imageCharacter{
+    position: absolute;
+    top: 140px;
+    left: 1050px;
+    background: #888;
+    width: 240px;
+    height: 320px;  
+}
+
+#pasivesGainedRace{
+    position: absolute;
+    top: 330px;
+    left: 430px;
+    background: #888;
+    width: 200px;
+    height: 300px; 
+    border: 2px solid #333; 
+    margin-left: 10px;
+}
+
+#pasivesGainedClass{
+  position: absolute;
+  top: 330px;
+  left: 630px;
+  background: #888;
+  width: 200px;
+  height: 300px;
+  border: 2px solid #333;
+  margin-left: 10px;  
+}
+
+ul {
+  position: absolute;
+  top: 120px;
+  left: 430px;
+  width: 190px;
+  height: 200px;
+  border: 1px solid #aaaaaa;
+  columns: 1;
+  -webkit-columns: 1;
+  -moz-columns: 1;
+  padding-left: 1px;
+}
+
+/* Style the list items*/
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 5px 4px 5px 8px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable INTERESANTE*/ 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Cambio el fondo y la letra al seleccionar en la lista */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  
+}
+ul li.disabled{
+  background: rgb(138, 12, 12);
+  color: rgb(0, 0, 0);
+  pointer-events: none;
+  border: 0.25px solid #aaaaaa;
+}
+
+ul li.enabled{
+  background: #f9f9f9;
+  pointer-events: all;
+  border: 0.25px solid #aaaaaa;
+}
+
+/* Agregar una marca de "checked" cuando se hace click */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #268017;
+  border-style: solid;
+  border-width: 0 3px 3px 0;
+  top: 5px;
+  left: 173px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+/*
+form {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  position: absolute;
+  top: 310px;
+  left: 20px;
+  background-color: #803535;
+  padding: 5px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+.value-button{  
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+#dex,#str,#con,#int,#kno,#cha {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  margin: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+tr:nth-child(even) {
+  background-color: #ddbbbb;
+}
+*/
+
+tr:nth-child(odd) {
+  background-color: #a49ead;
+}
+
+#characterName {
+    width: 600px;
+    padding-left: 400px;
+}
+
+body {
+    background-image:  url("assets/castillo-de-fantasia.jpg");
+}
+
+h1 {
+  text-align: center;  
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 16px 32px;
+  font-family: Arial;
+}
+
+
+.previous {
+  position: absolute;
+  top: 570px;
+  left:1000px;
+  background-color: #2d3031;
+  color: white;
+}
+
+.next {
+  position: absolute;
+  top: 570px;
+  left: 1150px;
+  background-color: #2d3031;
+  color: white;
+}

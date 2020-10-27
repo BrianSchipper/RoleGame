@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="creationTwo.css" />
+</head>
+
+<body>
+
+<h1 id="datos">Creacion de personaje parte 2</h1>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Nivel0')">Nivel 0</button>
+  <button class="tablinks" onclick="openCity(event, 'Nivel1')">Nivel 1</button>
+  <button class="tablinks" onclick="openCity(event, 'Nivel2')">Nivel 2</button>
+
+<button id= "magicButton" onclick="LoadSpells()" type="button">Aparecer Magias</button>
+
+  <div id="Nivel0" class="tabcontent">
+    <h3>Seleccione N magias de nivel 0 </h3>
+      <ul id="spellsList0">
+      </ul>
+  </div>
+
+  <div id="Nivel1" class="tabcontent">
+    <h3>Seleccione N magias de nivel 1 </h3>
+      <ul id="spellsList1">
+      </ul>
+  </div>
+
+  <div id="Nivel2" class="tabcontent">
+    <h3>Seleccione N magias de nivel 2 </h3>
+      <ul id="spellsList2">
+      </ul>
+  </div>
+</div>
+
+
+<div id="Items"> 
+  <p>You start with the following equipment, in addition to the equipment granted by your background:</p>
+
+<form >
+  <label for="backgroundCharacter">Elija un trasfondo:</label>
+
+<select id="backgroundCharacter" onclick="random()" >
+  <option value="acolyte">Acolito</option>
+  <option value="charlatan">Charlatan</option>
+  <option value="criminal">Criminal</option>
+</select>
+
+  <div id=#itemsForBackground> - </div>
+  <p>Seleccione su equipo inicial:</p>
+  <input type="radio" id="itemA" name="firstItem" value="cuchi">
+  <label for="male">Hacha +3</label><br>
+  <input type="radio" id="itemB" name="firstItem" value="maza">
+  <label for="maza">Maza de gigante</label><br>
+  <input type="radio" id="itemC" name="firstItem" value="weaponSimple">
+  <select id="weaponSimple">
+    <option value="daga">Daga</option>
+    <option value="cuchillo">cuchillo</option>
+    <option value="barra">Barra</option>
+    <option value="palo">Palo</option>
+  </select>
+
+  <br>
+  <br>
+
+  <input type="radio" id="itemD" name="secondItem" value="pack1">
+  <label for="itemD">Pack de aventurero</label><br>
+  <input type="radio" id="itemE" name="secondItem" value="pack2">
+  <label for="pack2">Pack de cirquero</label><br>  
+  <input type="radio" id="itemF" name="secondItem" value="pack3">
+  <label for="pack3">Pack de herrrero</label><br><br>
+</form>
+
+</div>
+
+<div id="Pet"> Mascota</div>
+
+<a id="Previous" href="creation.html" class="previous">&laquo; Atras</a>
+<a id="Next" href="city.html" class="next">Continuar &raquo;</a>
+
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="creationTwo.js"></script>
+
+</body>
+</html>
